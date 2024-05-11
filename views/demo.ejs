@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            signup
+        </title>
+    </head>
+
+    <body>
+       <table>
+        <tr><th>username</th><th>password</th><th>email</th></tr>
+        <tr>
+            <%result.forEach(element => {%>
+                <tr><td><%=element.usersname%></td><td><%=element.password%></td><td><%=element.email%></td></tr>
+            <%});%>
+        </tr>
+       </table>
+    </body>
+</html>
