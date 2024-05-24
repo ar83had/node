@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            URL SHORTENER
+        </title>
+    </head>
+
+    <body>
+        <form action="/url/shortener/store" method="get">
+            <label for="url">Enter your email :</label>
+            <input type="text" name="url" required>
+            <input type="hidden" name="user_email" value="<%=email%>">
+            <input type="submit">
+        </form>
+        <%if (flag==1){%>
+            <h1>History</h1>
+            <table>
+                <tr><th>S.No.</th><th>url</th><th>shorted url</th><th>views</th><th>email</th></tr>
+                <%var c1=1%>
+                <%result.forEach((el)=>{%>
+                    <tr><td><%=c1%></td><td><%=el.url%></td><td><%=el.url_shortner%></td><td><%=el.view%></td><td><%=el.email%></td></tr>
+                <%})%>
+            <%}%>
+            </table>
+    </body>
+</html>
