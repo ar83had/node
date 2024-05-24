@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            LOGIN FORM 
+        </title>
+        <body>
+            <%if(flag==0){%>
+                <form action="/url/login/store" method="get">
+                    <label for="email">Email :</label>
+                    <input type="email" name="email"> <br>
+                    <label for="password">Password :</label>
+                    <input type="password" name="password">
+                    <input type="submit">
+                </form>
+            <%}%>
+            <%if (flag==1){%>
+                <h1><%=statement%></h1>
+            <%}%>
+        </body>
+    </head>
+</html>
