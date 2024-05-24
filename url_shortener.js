@@ -9,4 +9,4 @@ app.listen(2000,(err)=>{
 })
 app.use(express.static(__dirname+"./views/democss.css"));
 
-app.use("/url/signup",signup);
+app.use("/url",signup);
