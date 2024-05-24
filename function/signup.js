@@ -49,6 +49,23 @@ const  func =
             console.log(result);
             res.render("home.ejs",{"flag":1,"result":result,"email":data.user_email});
         })
+    },
+    login :function(req,res){
+        res.render("login.ejs",{"flag":0});
+    },
+    login_store : function(req,res){
+        const data = req.query;
+        con.query(`select * from url_signup where password=\"${data.password}\" and email=\"${data.email}\"
+        `,(err,result)=>{
+            console.log(result);
+            if(result.length==0)
+            {
+                var temp = "INVALID EMAIL OR PASSWORD";
+                res.render("login.ejs",{"statement":temp,"flag":1});
+            }
+            else
+                    res.render("home.ejs",{"flag":0,"email":data.email});
+        })
     }
 }
 
